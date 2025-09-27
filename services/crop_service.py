@@ -1,6 +1,6 @@
 import numpy as np
 import pickle
-from schemas.crop_schemas import CropData  # usamos la nueva clase
+from schemas.crop_schemas import CropData 
 
 # Cargamos el modelo de RandomForest entrenado para cultivos
 with open('RFCropModel.pkl', 'rb') as file:   # asegúrate de guardar tu modelo con este nombre
