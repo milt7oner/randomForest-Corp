@@ -6,7 +6,7 @@ router = APIRouter()
 
 @router.post("/predict")
 async def cropPredict(data: CropData, model: str = "rf"):
-
+    print("model used ", model)
     prediction = crop_prediction(data, model_name=model)
 
     if hasattr(prediction, "tolist"):
