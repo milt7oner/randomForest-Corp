@@ -2,12 +2,12 @@ import numpy as np
 import pickle
 from schemas.crop_schemas import CropData 
 
-# Cargamos el modelo de RandomForest entrenado para cultivos
-with open('RFCropModel.pkl', 'rb') as file:   # asegúrate de guardar tu modelo con este nombre
+
+with open('RFCropModel.pkl', 'rb') as file:    
     RF_model = pickle.load(file)
 
 def crop_prediction(data: CropData):
-    # Preparamos los datos de entrada en el orden correcto
+ 
     xin = np.array([
         data.N,
         data.P,
@@ -16,8 +16,8 @@ def crop_prediction(data: CropData):
         data.humidity,
         data.ph,
         data.rainfall
-    ]).reshape(1, -1)   # 7 features
+    ]).reshape(1, -1)  
 
-    # Predicción
+   
     prediction = RF_model.predict(xin)
     return prediction[0]
