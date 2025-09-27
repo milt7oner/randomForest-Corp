@@ -18,7 +18,6 @@ async def cropPredict(data: CropData, model: str = "rf"):
             prediction = prediction[0]
 
     prediction = str(prediction)
-
     return {
         "model_used": model,
         "prediction": prediction
